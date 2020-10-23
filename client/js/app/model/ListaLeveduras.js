@@ -1,8 +1,6 @@
 class ListaLeveduras {
     constructor() {
-        this._lista = [{
-            id: 0
-        }];
+        this._lista = [];
     };
 
     adiciona(levedura) {

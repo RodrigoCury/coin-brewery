@@ -8,24 +8,34 @@
 </head>
 
 <body>
-    <form onsubmit="coroio.data(event)">
-        <label for="data">Data</label>
-        <input id="data" name="data" type="date">
+
+    <form onsubmit="controller.adiciona(event)">
+
+        <label for="id">Código de indetificação</label>
+        <input type="text" name="id" id="id">
+
+        <label for="especie"></label>
+        <input type="text" name="especie" id="especie">
+
+        <label for="entrada">Data Entrada</label>
+        <input id="entrada" name="entrada" type="date">
+
+        <label for="repicagem">Data Repicagem</label>
+        <input id="repicagem" name="repicagem" type="date">
+
         <button type="submit">Submit</button>
     </form>
+
+
+    <script src="js/app/model/LeveduraModel.js"></script>
+    <script src="js/app/model/ListaLeveduras.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/controller/Controller.js"></script>
+
     <script>
-
-        class rodrigo {
-            data(event) {
-                event.preventDefault()
-                var data = document.querySelector("#data")
-                console.log(data.value)
-            }
-        }
-
-        var coroio = new rodrigo()
-
+        const controller = new Controller();
     </script>
+
 </body>
 
 
