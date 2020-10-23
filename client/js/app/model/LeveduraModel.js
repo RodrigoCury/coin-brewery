@@ -32,7 +32,7 @@ class LeveduraModel {
         if (repicagem) {
             return DateHelper.textoParaData(repicagem);
         } else {
-            return undefined
+            return undefined;
         };
     };
 

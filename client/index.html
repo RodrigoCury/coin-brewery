@@ -4,27 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro Leveduras</title>
 </head>
 
 <body>
+    <section class="container">
+        <form class="form" onsubmit="controller.adiciona(event)">
 
-    <form onsubmit="controller.adiciona(event)">
+            <div class="form-input">
+                <label for="id">Código de indetificação:</label>
+                <input type="text" name="id" id="id">
+            </div>
 
-        <label for="id">Código de indetificação</label>
-        <input type="text" name="id" id="id">
+            <div class="form-input">
+                <label for="especie">Espécie:</label>
+                <input type="text" name="especie" id="especie">
+            </div>
 
-        <label for="especie"></label>
-        <input type="text" name="especie" id="especie">
+            <div class="form-input">
+                <label for="entrada">Data Entrada:</label>
+                <input id="entrada" name="entrada" type="date">
+            </div>
 
-        <label for="entrada">Data Entrada</label>
-        <input id="entrada" name="entrada" type="date">
+            <div class="form-input">
+                <label for="repicagem">Data Repicagem:</label>
+                <input id="repicagem" name="repicagem" type="date">
+            </div>
+            <button class="form-submit" type="submit">Submit</button>
+        </form>
+    </section>
 
-        <label for="repicagem">Data Repicagem</label>
-        <input id="repicagem" name="repicagem" type="date">
-
-        <button type="submit">Submit</button>
-    </form>
+    <div>
+        <table>
+            <thead class="cabecalho">
+                <tr>
+                    <td>ID</td>
+                    <td>Espécie</td>
+                    <td>Entrada</td>
+                    <td style="width: 150px;">Última Repicagem</td>
+                    <td>Limite</td>
+                    <td>Repicar</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="listagem">
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
 
 
     <script src="js/app/model/LeveduraModel.js"></script>
