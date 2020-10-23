@@ -7,6 +7,11 @@ class Controller {
         this._dataEntrada = $("#entrada");
         this._repicagem = $("#repicagem");
 
+        console.log(this._id.value,
+            this._especie.value,
+            this._dataEntrada.value,
+            this._repicagem.value)
+
         this._listaLeveduras = new ListaLeveduras();
 
     };
@@ -25,7 +30,7 @@ class Controller {
         return new LeveduraModel(
             this._id.value,
             this._especie.value,
-            this._entrada.value,
+            this._dataEntrada.value,
             this._repicagem.value)
     }
 

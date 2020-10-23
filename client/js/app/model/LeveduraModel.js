@@ -15,27 +15,39 @@ class LeveduraModel {
         return ("").join(this._especie);
     };
 
-    set especie() {
-        return this.especie;
+    set especie(especie) {
+        this.especie = especie;
     };
 
     _setDataEntrada(entrada) {
-        this._dataEntrada = entrada ? DateHelper.textoParaData(entrada) : new Date();
+
+        if (entrada) {
+            return DateHelper.textoParaData(entrada);
+        } else {
+            return new Date();
+        };
     };
 
     _setDataRepicagem(repicagem) {
-        this._dataRepicagem = repicagem ? DateHelper.textoParaData(repicagem) : undefined;
+        if (repicagem) {
+            return DateHelper.textoParaData(repicagem);
+        } else {
+            return undefined
+        };
     };
 
     _calculaDataLimite() {
+
+        let dataLimite;
+
         if (this._dataRepicagem) {
-            dataLimite = this._dataRepicagem;
+            dataLimite = new Date(this._dataRepicagem.getTime());
             dataLimite.setMonth(dataLimite.getMonth() + 6);
-            console.log(dataLimite);
+            return dataLimite;
         } else {
-            dataLimite = this._dataEntrada;
+            dataLimite = new Date(this._dataEntrada.getTime());
             dataLimite.setMonth(dataLimite.getMonth() + 6);
-            console.log(dataLimite);
+            return dataLimite;
         };
     };
 };
