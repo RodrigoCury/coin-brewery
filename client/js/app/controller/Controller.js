@@ -8,6 +8,7 @@ class Controller {
         this._repicagem = $("#repicagem");
 
         this._listaLeveduras = new ListaLeveduras();
+        this._levedurasView = new LevedurasView($("#levedurasView"));
 
     };
 
@@ -19,6 +20,10 @@ class Controller {
 
         this._listaLeveduras.adiciona(novaLevedura);
 
+        this._levedurasView.update(this._listaLeveduras.leveduras)
+
+        this._limpaFormulário()
+
     };
 
     novaLevedura() {
@@ -27,6 +32,14 @@ class Controller {
             this._especie.value,
             this._dataEntrada.value,
             this._repicagem.value);
+    };
+
+    _limpaFormulário() {
+        this._id.value = "";
+        this._especie.value = "";
+        this._dataEntrada.value = "";
+        this._repicagem.value = "";
+        this._id.focus();
     };
 
 };

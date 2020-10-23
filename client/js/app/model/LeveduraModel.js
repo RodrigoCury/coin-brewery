@@ -8,16 +8,30 @@ class LeveduraModel {
     };
 
     get id() {
-        return ("").join(this._id);
+        return this._id;
     };
 
     get especie() {
-        return ("").join(this._especie);
+        return this._especie;
     };
 
     set especie(especie) {
         this.especie = especie;
     };
+
+    get entrada() {
+        return DateHelper.dataParaTexto(this._dataEntrada);
+    }
+
+    get repicagem() {
+        return this._dataRepicagem ? DateHelper.dataParaTexto(this._dataRepicagem) : "Ainda não foi repicado";
+    }
+
+    get limite() {
+        return DateHelper.dataParaTexto(this._dataLimite);
+    }
+
+
 
     _setDataEntrada(entrada) {
 
