@@ -11,25 +11,32 @@ class LevedurasView extends View {
         <table>
             <thead class="cabecalho">
                 <tr>
-                    <td>ID</td>
-                    <td style="width: 110px;">Espécie</td>
-                    <td>Entrada</td>
-                    <td style="width: 150px;">Última Repicagem</td>
-                    <td>Limite</td>
-                    <td>Repicar</td>
+                    <td>Data de Entrada:</td>
+                    <td>Nome da Levedura:</td>
+                    <td>Marca:</td>
+                    <td>Atenuação:</td>
+                    <td>Floculação:</td>
+                    <td>Perfil Fermentativo</td>
+                    <td>Qtd. Repiques</td>
+                    <td>Próximo Repique</td>
                 </tr>
             </thead>
-            <tbody class="leveduras">
+
+            <tbody class="levedura">
                 ${model.map(levedura => `
                         <tr class="listagem">
-                            <td>${levedura.id}</td>
-                            <td>${levedura.especie}</td>
-                            <td>${levedura.entrada}</td>
-                            <td>${levedura.repicagem}</td>
-                            <td>${levedura.limite}</td>
-                            <td>
-                                <button class="btn-repicar">Repicar</button>
-                            </td>
+                            <td>${DateHelper.dataParaTexto(levedura.dataEntrada)}</td>
+                            <td>${levedura.nome}</td>
+                            <td>${levedura.marca}</td>
+                            <td>${levedura.atenuacao}</td>
+                            <td>${levedura.floculacao}</td>
+                            <td>${levedura.perfil}</td>
+                            <td>${levedura.repiques}</td>
+                            <td>${DateHelper.dataParaTexto(levedura.proxRepique)}</td>
+
+                            
+                            <td class="td-repicar"><button class="btn-repicar">Repicar</button></td>
+
                         </tr>
                     `).join('\n')}
             </tbody>

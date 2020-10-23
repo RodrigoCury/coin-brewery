@@ -1,40 +1,19 @@
 class LeveduraModel {
-    constructor(id, especie, entrada, repicagem) {
-        this._id = id;
-        this._especie = especie;
+    constructor(nome, marca, entrada, atenuacao, floculacao, perfil, repiques) {
+        console.log(atenuacao)
         this._dataEntrada = this._setDataEntrada(entrada);
-        this._dataRepicagem = this._setDataRepicagem(repicagem);
-        this._dataLimite = this._calculaDataLimite();
+        this._nome = nome;
+        this._marca = marca;
+        this._atenuacao = atenuacao ? atenuacao : "N/D";
+        this._floculacao = floculacao;
+        this._perfil = perfil;
+        this._repiques = repiques;
+        this._proxRepique = this._calculaDataRepicagem();
+
+        console.log(this._dataEntrada, this._proxRepique)
     };
-
-    get id() {
-        return this._id;
-    };
-
-    get especie() {
-        return this._especie;
-    };
-
-    set especie(especie) {
-        this.especie = especie;
-    };
-
-    get entrada() {
-        return DateHelper.dataParaTexto(this._dataEntrada);
-    }
-
-    get repicagem() {
-        return this._dataRepicagem ? DateHelper.dataParaTexto(this._dataRepicagem) : "Ainda não foi repicado";
-    }
-
-    get limite() {
-        return DateHelper.dataParaTexto(this._dataLimite);
-    }
-
-
 
     _setDataEntrada(entrada) {
-
         if (entrada) {
             return DateHelper.textoParaData(entrada);
         } else {
@@ -42,26 +21,83 @@ class LeveduraModel {
         };
     };
 
-    _setDataRepicagem(repicagem) {
-        if (repicagem) {
-            return DateHelper.textoParaData(repicagem);
-        } else {
-            return undefined;
-        };
+    _calculaDataRepicagem() {
+        let dataRepicagem = new Date(this._dataEntrada.getTime());
+        dataRepicagem.setMonth(this._dataEntrada.getMonth() + 5);
+        dataRepicagem.setDate(this._dataEntrada.getDate() + 15);
+
+        return dataRepicagem
     };
 
-    _calculaDataLimite() {
+    repicar() {
+        this._repiques += 1
+        this._proxRepique = new Date(this._proxRepique.getTime())
+            .setMonth(this._proxRepique.getMonth() + 5)
+            .setDate(this._proxRepique.getDate() + 15);
+    }
 
-        let dataLimite;
-
-        if (this._dataRepicagem) {
-            dataLimite = new Date(this._dataRepicagem.getTime());
-            dataLimite.setMonth(dataLimite.getMonth() + 6);
-            return dataLimite;
-        } else {
-            dataLimite = new Date(this._dataEntrada.getTime());
-            dataLimite.setMonth(dataLimite.getMonth() + 6);
-            return dataLimite;
-        };
+    get dataEntrada() {
+        return new Date(DateHelper.dataParaForm(this._dataEntrada));
     };
+
+    get nome() {
+        return this._nome;
+    };
+
+    get marca() {
+        return this._marca;
+    };
+
+    get atenuacao() {
+        return this._atenuacao;
+    };
+
+    get floculacao() {
+        return this._floculacao;
+    };
+
+    get perfil() {
+        return this._perfil;
+    };
+
+    get repiques() {
+        return this._repiques;
+    };
+
+    get proxRepique() {
+        return new Date(DateHelper.dataParaForm(this._proxRepique));
+    };
+
+    set dataEntrada(data) {
+        this._dataEntrada = DateHelper.textoParaData(data);
+    };
+
+    set nome(nome) {
+        this._nome = nome;
+    };
+
+    set marca(marca) {
+        this._marca = marca;
+    };
+
+    set atenuacao(atenuacao) {
+        this._atenuacao = atenuacao;
+    };
+
+    set floculacao(floculacao) {
+        this._floculacao = floculacao;
+    };
+
+    set perfil(perfil) {
+        this._perfil = perfil;
+    };
+
+    set repiques(repiques) {
+        this._repiques = repiques;
+    }
+
+    set proxRepique(proxRepique) {
+        this._proxRepique = proxRepique;
+    };
+
 };

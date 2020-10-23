@@ -11,33 +11,93 @@
 
 <body>
     <section class="container">
-        <form class="form" onsubmit="controller.adiciona(event)">
+        <div>
+            <form class="form" onsubmit="controller.adiciona(event)">
 
-            <div class="form-input">
-                <label for="id">ID:</label>
-                <input type="text" name="id" id="id" required>
-            </div>
+                <div class="form-input">
+                    <label for="entrada">Data Entrada:</label>
+                    <input id="entrada" name="entrada" type="date">
+                </div>
 
-            <div class="form-input">
-                <label for="especie">Espécie:</label>
-                <input type="text" name="especie" id="especie" required>
-            </div>
+                <div class="form-input">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" required>
+                </div>
 
-            <div class="form-input">
-                <label for="entrada">Data Entrada:</label>
-                <input id="entrada" name="entrada" type="date">
-            </div>
+                <div class="form-input">
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" id="marca" required>
+                </div>
 
-            <div class="form-input">
-                <label for="repicagem">Data Repicagem:</label>
-                <input id="repicagem" name="repicagem" type="date">
-            </div>
-            <button class="form-submit" type="submit">Adicionar Levedura</button>
-        </form>
+                <div class="form-input">
+                    <div class="form-checkbox">
+                        <label for="atenuacao">Atenuação:</label>
+                        <div>
+                            <input type="checkbox" name="atenuacao-disp" id="atenuacao-disp">
+                            <label for="atenuacao-disp">N/D</label>
+                        </div>
+                    </div>
+                    <input id="atenuacao" name="atenuacao" type="number" min="0.00" max="100" step="0.05" value="0.0">
+                </div>
+
+                <div class="form-input">
+                    <label>Floculação:</label>
+                    <div class="form-radio">
+                        <label for="alta">Alta</label>
+                        <input type="radio" name="floculação" id="alta" class="radio" value="Alta">
+                    </div>
+                    <div class="form-radio">
+                        <label for="media">Média</label>
+                        <input type="radio" name="floculação" id="media" class="radio" value="Média">
+                    </div>
+                    <div class="form-radio">
+                        <label for="baixa">Baixa</label>
+                        <input type="radio" name="floculação" id="baixa" class="radio" value="Baixa">
+                    </div>
+                    <div class="form-radio">
+                        <label for="floculação-disp">N/D</label>
+                        <input type="radio" name="floculação" id="floculação-disp" class="radio" value="N/D">
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <label>Perfil Fermentativo:</label>
+                    <div class="form-radio">
+                        <label for="ale">Ale</label>
+                        <input type="radio" name="perfil-fermentativo" id="ale" class="radio" value="Ale">
+                    </div>
+                    <div class="form-radio">
+                        <label for="lager">Lager</label>
+                        <input type="radio" name="perfil-fermentativo" id="lager" class="radio" value="Lager">
+                    </div>
+                    <div class="form-radio">
+                        <label for="baixa">Selvagem</label>
+                        <input type="radio" name="perfil-fermentativo" id="alta" class="radio" value="alta">
+                    </div>
+                    <div class="form-radio">
+                        <label for="bacteria">Bactéria</label>
+                        <input type="radio" name="perfil-fermentativo" id="bacteria" class="radio" value="Bactéria">
+                    </div>
+                    <div class="form-radio">
+                        <label for="floculação-disp">N/D</label>
+                        <input type="radio" name="perfil-fermentativo" id="floculação-disp" class="radio" value="N/D">
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <label for="repiques">Quantidade de Repiques:</label>
+                    <input id="repiques" name="repiques" type="number" min="0" step="1" value="0.5" required>
+                </div>
+
+                <button class="form-submit" type="submit">Adicionar Levedura</button>
+            </form>
+        </div>
+
+        <div id="levedurasView">
+
+        </div>
     </section>
 
-    <div id="levedurasView">
-    </div>
 
 
     <script src="js/app/model/LeveduraModel.js"></script>
@@ -45,6 +105,7 @@
     <script src="js/app/helpers/DateHelper.js"></script>
     <script src="js/app/view/View.js"></script>
     <script src="js/app/view/LevedurasView.js"></script>
+    <script src="js/app/controller/controllerEventListener.js"></script>
     <script src="js/app/controller/Controller.js"></script>
 
     <script>

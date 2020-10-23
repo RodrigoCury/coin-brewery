@@ -2,10 +2,14 @@ class Controller {
     constructor() {
         const $ = document.querySelector.bind(document);
 
-        this._id = $("#id");
-        this._especie = $("#especie");
-        this._dataEntrada = $("#entrada");
-        this._repicagem = $("#repicagem");
+        this._dataEntrada = $("#entrada")
+        this._nome = $("#nome")
+        this._marca = $("#marca")
+        this._atenuacao = $("#atenuacao")
+        this._floculacao = $('input[name="floculação"]:checked')
+        this._perfil = $('input[name="perfil-fermentativo"]:checked')
+        this._repiques = $("#repiques")
+
 
         this._listaLeveduras = new ListaLeveduras();
         this._levedurasView = new LevedurasView($("#levedurasView"));
@@ -28,18 +32,25 @@ class Controller {
 
     novaLevedura() {
         return new LeveduraModel(
-            this._id.value,
-            this._especie.value,
+            this._nome.value,
+            this._marca.value,
             this._dataEntrada.value,
-            this._repicagem.value);
+            this._atenuacao.value,
+            this._floculacao.value,
+            this._perfil.value,
+            this._repiques.value);
     };
 
     _limpaFormulário() {
-        this._id.value = "";
-        this._especie.value = "";
-        this._dataEntrada.value = "";
-        this._repicagem.value = "";
-        this._id.focus();
+        this._nome.value = ""
+        this._marca.value = ""
+        this._dataEntrada.value = ""
+        this._atenuacao.value = "0.0"
+        this._repiques.value = "0"
+        this._nome.focus()
     };
 
+    atenuacaoNd() {
+        docu
+    }
 };
