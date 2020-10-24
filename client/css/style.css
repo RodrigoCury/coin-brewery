@@ -2,6 +2,16 @@ body {
     background-color: #321e0f;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
 .container {
     margin: 30px 50px;
     display: flex;
