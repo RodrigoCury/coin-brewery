@@ -26,7 +26,7 @@ class Controller {
 
         this._levedurasView.update(this._listaLeveduras.leveduras)
 
-        // this._limpaFormulário()
+        this._limpaFormulário()
 
     };
 
