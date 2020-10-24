@@ -38,7 +38,8 @@ class Controller {
             this._atenuacao.value,
             this._floculacao.value,
             this._perfil.value,
-            this._repiques.value);
+            this._repiques.value,
+            IdService.generateNewId(this._listaLeveduras.leveduras));
     };
 
     _limpaFormulário() {

@@ -1,6 +1,6 @@
 class LeveduraModel {
-    constructor(nome, marca, entrada, atenuacao, floculacao, perfil, repiques) {
-        console.log(atenuacao)
+    constructor(nome, marca, entrada, atenuacao, floculacao, perfil, repiques, id) {
+
         this._dataEntrada = this._setDataEntrada(entrada);
         this._nome = nome;
         this._marca = marca;
@@ -10,7 +10,8 @@ class LeveduraModel {
         this._repiques = repiques;
         this._proxRepique = this._calculaDataRepicagem();
 
-        console.log(this._dataEntrada, this._proxRepique)
+        this._id = id
+        console.log(id)
     };
 
     _setDataEntrada(entrada) {
