@@ -6,13 +6,13 @@ class Controller {
         this._nome = $("#nome")
         this._marca = $("#marca")
         this._atenuacao = $("#atenuacao")
-        this._floculacao = $('input[name="floculação"]:checked')
+        this._floculacao = $('input[name="floculacao"]:checked')
         this._perfil = $('input[name="perfil-fermentativo"]:checked')
         this._repiques = $("#repiques")
 
 
         this._listaLeveduras = new ListaLeveduras();
-        this._levedurasView = new LevedurasView($("#levedurasView"));
+        this._levedurasView = new LevedurasView($("#leveduras-list"));
 
     };
 
@@ -22,11 +22,13 @@ class Controller {
 
         let novaLevedura = this.novaLevedura();
 
+        console.log(novaLevedura)
+
         this._listaLeveduras.adiciona(novaLevedura);
 
         this._levedurasView.update(this._listaLeveduras.leveduras)
 
-        this._limpaFormulário()
+        // this._limpaFormulário()
 
     };
 
@@ -51,7 +53,18 @@ class Controller {
         this._nome.focus()
     };
 
-    atenuacaoNd() {
-        docu
+    repicar(id) {
+        this._listaLeveduras.leveduras.forEach(levedura => {
+
+            if (levedura.id == id) {
+                levedura.repiques += 1
+                let novaData = new Date()
+                novaData.setMonth(novaData.getMonth() + 5)
+                novaData.setDate(novaData.getDate() + 15)
+                levedura.proxRepique = novaData
+                return
+            }
+        })
+        this._levedurasView.update(this._listaLeveduras.leveduras)
     }
 };

@@ -1,8 +1,9 @@
 class View {
 
-    constructor(elemento) {
+    constructor(tbody) {
 
-        this._elemento = elemento;
+        this._tbody = tbody;
+
     }
 
     template() {
@@ -11,6 +12,8 @@ class View {
     }
 
     update(model) {
-        this._elemento.innerHTML = this.template(model);
+        this._tbody.innerHTML = this.template(model);
     }
+
+
 }   

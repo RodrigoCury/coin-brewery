@@ -7,11 +7,10 @@ class LeveduraModel {
         this._atenuacao = atenuacao ? atenuacao : "N/D";
         this._floculacao = floculacao;
         this._perfil = perfil;
-        this._repiques = repiques;
+        this._repiques = parseInt(repiques, 10);
         this._proxRepique = this._calculaDataRepicagem();
 
         this._id = id
-        console.log(id)
     };
 
     _setDataEntrada(entrada) {
@@ -98,7 +97,11 @@ class LeveduraModel {
     }
 
     set proxRepique(proxRepique) {
-        this._proxRepique = proxRepique;
+        this._proxRepique = new Date(proxRepique);
+    };
+
+    get id() {
+        return this._id;
     };
 
 };

@@ -77,6 +77,11 @@ td {
     border: 2px solid #fbdf10;
 }
 
+.td-repicar {
+    background-color: #321e0f;
+    border: 2px  #fbdf10;
+}
+
 .listagem:hover {
     color: #eece78;
     background-color: #c35c20;

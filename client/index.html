@@ -44,19 +44,19 @@
                     <label>Floculação:</label>
                     <div class="form-radio">
                         <label for="alta">Alta</label>
-                        <input type="radio" name="floculação" id="alta" class="radio" value="Alta">
+                        <input type="radio" name="floculacao" id="alta" class="radio" value="Alta">
                     </div>
                     <div class="form-radio">
                         <label for="media">Média</label>
-                        <input type="radio" name="floculação" id="media" class="radio" value="Média">
+                        <input type="radio" name="floculacao" id="media" class="radio" value="Média">
                     </div>
                     <div class="form-radio">
                         <label for="baixa">Baixa</label>
-                        <input type="radio" name="floculação" id="baixa" class="radio" value="Baixa">
+                        <input type="radio" name="floculacao" id="baixa" class="radio" value="Baixa">
                     </div>
                     <div class="form-radio">
                         <label for="floculação-disp">N/D</label>
-                        <input type="radio" name="floculação" id="floculação-disp" class="radio" value="N/D">
+                        <input type="radio" name="floculacao" id="floculacao" class="radio" value="N/D" checked>
                     </div>
                 </div>
 
@@ -80,7 +80,8 @@
                     </div>
                     <div class="form-radio">
                         <label for="floculação-disp">N/D</label>
-                        <input type="radio" name="perfil-fermentativo" id="floculação-disp" class="radio" value="N/D">
+                        <input type="radio" name="perfil-fermentativo" id="floculação-disp" class="radio" value="N/D"
+                            checked>
                     </div>
                 </div>
 
@@ -94,7 +95,24 @@
         </div>
 
         <div id="levedurasView">
+            <table>
+                <thead class="cabecalho">
+                    <tr>
+                        <td>Data de Entrada:</td>
+                        <td>Nome da Levedura:</td>
+                        <td>Marca:</td>
+                        <td>Atenuação:</td>
+                        <td>Floculação:</td>
+                        <td>Perfil Fermentativo</td>
+                        <td>Qtd. Repiques</td>
+                        <td>Próximo Repique</td>
+                    </tr>
+                </thead>
 
+                <tbody id="leveduras-list"></tbody>
+
+                <tfoot></tfoot>
+            </table>
         </div>
     </section>
 
