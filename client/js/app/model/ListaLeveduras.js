@@ -7,15 +7,15 @@ class ListaLeveduras {
         this._lista.push(levedura);
     };
 
-    apagaItem(id) {
-        this._lista = this._lista.filter((value, index, arr) => {
-            return value.id != id
-        });
-        console.log(this._lista)
+    apagaItem(objeto) {
+        this._lista = this._lista.filter((value, index, arr) => value != objeto);
     };
 
     get leveduras() {
         return [].concat(this._lista);
     };
 
+    concatenaLista(lista) {
+        this._lista.concat(lista)
+    }
 };

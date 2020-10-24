@@ -12,9 +12,22 @@ class Controller {
 
 
         this._listaLeveduras = new ListaLeveduras();
-        this._levedurasView = new LevedurasView($("#leveduras-list"));
+        this._levedurasView = new LevedurasView($("#levedurasView"));
 
+        this._leveduraService = new LeveduraService();
+
+        this._init()
     };
+
+    async _init() {
+        try {
+            this._leveduraService.listaTodos()
+                .then(leveduras => leveduras.forEach(levedura => this._listaLeveduras.adiciona(levedura)))
+                .then(() => this._levedurasView.update(this._listaLeveduras.leveduras))
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     adiciona(event) {
 
@@ -22,12 +35,15 @@ class Controller {
 
         let novaLevedura = this.novaLevedura();
 
+        console.log(novaLevedura)
+
         this._listaLeveduras.adiciona(novaLevedura);
 
         this._levedurasView.update(this._listaLeveduras.leveduras)
 
-        this._limpaFormulário()
+        this._leveduraService.cadastra(novaLevedura)
 
+        this._limpaFormulário()
     };
 
     novaLevedura() {
@@ -39,6 +55,7 @@ class Controller {
             this._floculacao.value,
             this._perfil.value,
             this._repiques.value,
+            null,
             IdService.generateNewId(this._listaLeveduras.leveduras));
     };
 
@@ -54,13 +71,28 @@ class Controller {
     repicar(id) {
         this._listaLeveduras.leveduras.forEach(levedura => {
 
+            let antigo = levedura
+
             if (levedura.id == id) {
                 levedura.repiques += 1
                 let novaData = new Date()
                 novaData.setMonth(novaData.getMonth() + 5)
                 novaData.setDate(novaData.getDate() + 15)
                 levedura.proxRepique = novaData
-                return
+
+                this._leveduraService.altera(antigo, levedura)
+            }
+        })
+        this._levedurasView.update(this._listaLeveduras.leveduras)
+    }
+
+    deletar(id) {
+        this._listaLeveduras.leveduras.forEach(levedura => {
+
+            if (levedura.id == id) {
+                this._listaLeveduras.apagaItem(levedura)
+                this._leveduraService.apaga(levedura)
+
             }
         })
         this._levedurasView.update(this._listaLeveduras.leveduras)
