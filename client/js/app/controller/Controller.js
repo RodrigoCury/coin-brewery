@@ -22,8 +22,6 @@ class Controller {
 
         let novaLevedura = this.novaLevedura();
 
-        console.log(novaLevedura)
-
         this._listaLeveduras.adiciona(novaLevedura);
 
         this._levedurasView.update(this._listaLeveduras.leveduras)
