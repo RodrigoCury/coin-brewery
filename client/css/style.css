@@ -1,5 +1,11 @@
 body {
-    background-color: #321e0f;
+    background-color: #e5cfa8;
+}
+
+h1 {
+    font-size: 4em;
+    color: #da0aad;
+    text-shadow: 7px 7px 10px #da0aad;
 }
 
 footer {
@@ -24,9 +30,14 @@ footer {
     display:flex;
     flex-direction:column;
     justify-content: space-around;
-    border: 3px solid #fbdf10;
+    background-color: #4d3e37;
+    border: 7px solid #d37838;
     border-radius: 8px;
-    box-shadow: -2px 2px 2px #f5d74d;
+    box-shadow: 4px 4px 8px #e4945a;
+}
+
+input {
+    background-color: #d2c0ac;
 }
 
 .form-input {
@@ -34,7 +45,7 @@ footer {
     width: 250px;
     flex-direction: column;
     margin: 5px 15px;
-    color: #fbdf10;
+    color: #efc44de8;
 }
 
 .form-checkbox {
@@ -67,8 +78,15 @@ input {
 }
 
 .form-submit {
+    font-style: italic;
+    font-weight: 600;
+    padding: 5px;
+    color: #eece78;
     width: 170px;
     margin: 10px 60px;
+    border: 2px solid #e4945a;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
 }
 
 table {
@@ -76,46 +94,59 @@ table {
 }
 
 tr {
-    color: #fbdf10;
-    background-color: #6a3117;
-}
-
-footer {
-    
+    color: #eece78;
+    background-color: #4d3e37;
 }
 
 td {
     text-align: center;
     width: 100px;
     padding: 5px;
-    border: 2px solid #fbdf10;
+    border: 2px solid #d37e40;
 }
 
 .td-acao {
-    background-color: #321e0f;
-    border: 2px  #fbdf10;
+    background-color: #e5cfa8;
+    border: 1px;
+    width: 30px
+}
+
+.thead {
+    border-top: 6px solid #d37e40;
+}
+
+.tbody-l {
+    border-left: 7px solid #d37e40;
+}
+
+.tbody-r {
+    border-right: 7px solid #d37e40;
+}
+
+.tfoot {
+    border-bottom: 7px solid #d37e40;   
 }
 
 .listagem:hover {
     color: #eece78;
-    background-color: #c35c20;
+    background-color: #695850;
 }
 
 .btn-repicar {
-    background-color: rgba(245, 220, 125, 1);
-    color: black;
-    border: 2px solid black;
-    box-shadow: 2px 2px 3px black;
+    color: #eece78;
+    padding: 2px 10px;
+    border: 2px solid #e4945a;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
+    box-shadow: 1px 1px 3px black;
 }
 
 .btn-repicar:hover {
-    background-color:rgba(245, 220, 125, 0.8);
+    box-shadow: 2px 2px 5px black;
 }
 
 .btn-repicar:active {
-    box-shadow: 1px 1px 2px black;
-    background-color: #f5d74d;
-    
+    box-shadow: 1px 1px 3px black;
 }
 
 .none {

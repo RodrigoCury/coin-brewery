@@ -15,37 +15,38 @@ class LevedurasView extends View {
                 <table>
                     <thead class="cabecalho">
                         <tr>        
-                            <td>Data de Entrada:</td>
-                            <td>Nome da Levedura:</td>
-                            <td>Marca:</td>
-                            <td>Atenuação:</td>
-                            <td>Floculação:</td>
-                            <td>Perfil Fermentativo</td>
-                            <td>Qtd. Repiques</td>
-                            <td>Próximo Repique</td>
+                            <td  class="thead tbody-l">Data de Entrada:</td>
+                            <td  class="thead">Nome da Levedura:</td>
+                            <td  class="thead">Marca:</td>
+                            <td  class="thead">Atenuação:</td>
+                            <td  class="thead">Floculação:</td>
+                            <td  class="thead">Perfil Fermentativo</td>
+                            <td  class="thead">Qtd. Repiques</td>
+                            <td  class="thead tbody-r">Próximo Repique</td>
                         </tr>
                     </thead>
                 <tbody id="leveduras-list">
             ${model.map(levedura => `
                         <tr class="listagem" id="${levedura.id}">
-                            <td>${DateHelper.dataParaTexto(levedura.dataEntrada)}</td>
+                            <td class="tbody-l">${DateHelper.dataParaTexto(levedura.dataEntrada)}</td>
                             <td>${levedura.nome}</td>
                             <td>${levedura.marca}</td>
                             <td>${levedura.atenuacao}%</td>
                             <td>${levedura.floculacao}</td>
                             <td>${levedura.perfil}</td>
                             <td>${levedura.repiques}</td>
-                            <td>${DateHelper.dataParaTexto(levedura.proxRepique)}</td>
+                            <td class="tbody-r">${DateHelper.dataParaTexto(levedura.proxRepique)}</td>
 
-                            <td class="td-acao"><button onclick="controller.repicar(${levedura.id})">Repicar</button></td>
-                            <td class="td-acao"><button onclick="controller.deletar(${levedura.id})">Apagar</button></td>
+                            <td class="td-acao"><button class="btn-repicar" onclick="controller.repicar(${levedura.id})">+</button></td>
+                            <td class="td-acao"><button class="btn-repicar" onclick="controller.deletar(${levedura.id})">X</button></td>
                         </tr>
                         `).join('\n')}
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td>Total</td>
-                            <td colspan="7">${model.length}</td>
+                            <td class="tfoot tbody-l">Total</td>
+                            <td class="tfoot tbody-r" colspan="7">${model.length}</td>
+                            <td class="td-acao"></td>
                         </tr>
                     </tfoot>
                 </table>
