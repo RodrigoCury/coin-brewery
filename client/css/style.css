@@ -2,12 +2,6 @@ body {
     background-color: #e5cfa8;
 }
 
-h1 {
-    font-size: 4em;
-    color: #da0aad;
-    text-shadow: 7px 7px 10px #da0aad;
-}
-
 footer {
     display: flex;
     justify-content: center;
