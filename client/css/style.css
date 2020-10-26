@@ -43,6 +43,7 @@ footer {
 .logo {
     width: 100px;
     height: 100px;
+    margin-bottom: 10px;
 }
 
 .logo-nav {
@@ -50,10 +51,23 @@ footer {
     height: 140px;
 }
 
+.estoque {
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px 0;
+    font-size: 400%;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #4d3e37;
+text-shadow: 1px 2px#d37838;
+    text-align: center;
+}
+
 .container {
     margin: 30px 45px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .form{
@@ -122,10 +136,13 @@ input {
     transition: 0.3s;
 }
 
-
+.table {
+    margin-top: 25px;
+    width: 70%;
+}
 
 table {
-    margin-left: 50px;
+    width: 100%;
 }
 
 tr {
@@ -135,6 +152,7 @@ tr {
 
 td {
     text-align: center;
+    vertical-align: middle;
     width: 100px;
     padding: 5px;
     border: 2px solid #d37e40;
