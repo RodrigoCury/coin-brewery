@@ -1,0 +1,43 @@
+.container-header {
+    display: flex;
+    justify-content: space-around;
+}
+.nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.caixa {
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+.form-checkbox {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.form-radio {
+    display: flex;
+    justify-content: left;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+/*parte mobile*/
+@media(max-width: 768px) {
+.form {
+    display: flex;
+
+}    
+body {
+display: flex;
+flex-flow: row;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+}
