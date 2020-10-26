@@ -15,11 +15,11 @@ class LevedurasView extends View {
                 <table>
                     <thead class="cabecalho">
                         <tr>        
-                            <td  class="thead tbody-l">Data de Entrada:</td>
-                            <td  class="thead">Nome da Levedura:</td>
-                            <td  class="thead">Marca:</td>
-                            <td  class="thead">Atenuação:</td>
-                            <td  class="thead">Floculação:</td>
+                            <td  class="thead tbody-l">Data de Entrada</td>
+                            <td  class="thead">Nome da Levedura</td>
+                            <td  class="thead">Marca</td>
+                            <td  class="thead">Atenuação</td>
+                            <td  class="thead">Floculação</td>
                             <td  class="thead">Perfil Fermentativo</td>
                             <td  class="thead">Qtd. Repiques</td>
                             <td  class="thead tbody-r">Próximo Repique</td>
