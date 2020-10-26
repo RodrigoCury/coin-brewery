@@ -35,7 +35,7 @@ class LevedurasView extends View {
                             <td>${levedura.floculacao}</td>
                             <td>${levedura.perfil}</td>
                             <td>${levedura.repiques}</td>
-                            <td class="tbody-r">${DateHelper.dataParaTexto(levedura.proxRepique)}</td>
+                            <td class="tbody-r${this._datapróxima(levedura.proxRepique)}"><span>${DateHelper.dataParaTexto(levedura.proxRepique)}</span></td>
 
                             <td class="td-acao"><button class="btn-repicar" onclick="controller.repicar(${levedura.id})">+</button></td>
                             <td class="td-acao"><button class="btn-repicar" onclick="controller.deletar(${levedura.id})">X</button></td>
@@ -52,5 +52,19 @@ class LevedurasView extends View {
                 </table>
                         `;
     };
+
+    _datapróxima(data) {
+        let timeDelta = new Date().getTime() - data.getTime()
+
+        if (timeDelta > -2593000000 && timeDelta < -1296000001) {
+            return " aviso-médio"
+        } else if (timeDelta > -1296000000 && timeDelta < 0) {
+            return " aviso-alto"
+        } else if (timeDelta > 0) {
+            return " aviso-expirado"
+        } else {
+            return ""
+        }
+    }
 
 };

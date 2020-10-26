@@ -1,3 +1,36 @@
+
+header {
+    padding: 50px 0;
+    width: 100%;
+    height: 130px;
+    margin: 0 auto 50px auto;
+    background-color: rgba(77, 62, 55, 0.95)
+}
+
+nav a {
+    color: #d7be69;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 2px black;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border: 2px solid #e4945a;
+    border-radius: 50px;
+    background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
+    padding: 2px 10px;
+    box-shadow: 2px 2px 3px rgb(173, 113, 72);
+}
+
+nav a:hover {
+    box-shadow: 3px 3px 6px rgb(173, 113, 72);
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+nav a:active {
+    box-shadow: 1px 1px 3px rgb(173, 113, 72);
+    transition: 0.2s all;
+}
 body {
     background-color: #e5cfa8;
 }
@@ -12,8 +45,13 @@ footer {
     height: 100px;
 }
 
+.logo-nav {
+    width: 140px;
+    height: 140px;
+}
+
 .container {
-    margin: 30px 50px;
+    margin: 30px 45px;
     display: flex;
     flex-direction: row;
 }
@@ -40,18 +78,6 @@ input {
     flex-direction: column;
     margin: 5px 15px;
     color: #efc44de8;
-}
-
-.form-checkbox {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-}
-
-.form-radio {
-    display: flex;
-    flex-flow: row-reverse;
-    justify-content: left;
 }
 
 #atenuacao-disp,
@@ -81,7 +107,22 @@ input {
     border: 2px solid #e4945a;
     border-radius: 20px;
     background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
+    box-shadow: 2px 2px 3px rgb(173, 113, 72);
 }
+
+.form-submit:hover {
+    background-image: linear-gradient(45deg,#c58f6f #7c3c2a, #c57f6f);
+    box-shadow: 3px 3px 6px rgb(173, 113, 72);
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.form-submit:active {
+    box-shadow: 1px 1px 3px rgb(173, 113, 72);
+    transition: 0.3s;
+}
+
+
 
 table {
     margin-left: 50px;
@@ -99,6 +140,29 @@ td {
     border: 2px solid #d37e40;
 }
 
+.aviso-alto {
+    background-color: orangered;
+    color: white;
+}
+
+.aviso-médio {
+    background-color: orange;
+    color: white;
+}
+
+.aviso-expirado {
+    background-color: red;
+    color: white;
+}
+
+.aviso-expirado span {
+    display: none
+}
+
+.aviso-expirado:after {
+    content: "Expirado";
+}
+
 .td-acao {
     background-color: #e5cfa8;
     border: 1px;
@@ -106,6 +170,8 @@ td {
 }
 
 .thead {
+    font-weight: bold;
+    vertical-align: middle;
     border-top: 6px solid #d37e40;
 }
 
