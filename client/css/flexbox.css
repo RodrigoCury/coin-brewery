@@ -30,14 +30,41 @@ footer {
 }
 /*parte mobile*/
 @media(max-width: 768px) {
+
 .form {
     display: flex;
 
 }    
-body {
-display: flex;
-flex-flow: row;
-justify-content: space-between;
-flex-wrap: wrap;
+.container-header {
+    max-width: 768px;
+    width: 100%;
 }
+.estoque {
+    align-items: center;
+    display: flex;
+    margin-left: 20px;
+}
+.container-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    align-items: center;
+}
+body {
+    margin-top: 230px;
+}
+footer {
+    align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+	
+
 }
