@@ -1,0 +1,237 @@
+
+header {
+    position: fixed;
+    top: 0;
+    padding: 15px 0;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(77, 62, 55, 0.95);
+    box-shadow: 5px 10px 18px #6b605a;
+}
+
+
+nav a {
+    color: #d7be69;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 2px black;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border: 2px solid #e4945a;
+    border-radius: 50px;
+    background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
+    padding: 2px 10px;
+    box-shadow: 2px 2px 3px rgb(173, 113, 72);
+}
+
+nav a:hover {
+    box-shadow: 3px 3px 6px rgb(173, 113, 72);
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+nav a:active {
+    box-shadow: 1px 1px 3px rgb(173, 113, 72);
+    transition: 0.2s all;
+}
+body {
+    margin-top: 190px;
+    background-color: #e5cfa8;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.logo-nav {
+    width: 100px;
+    height: 100px;
+}
+
+.estoque {
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px 0;
+    font-size: 400%;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #4d3e37;
+text-shadow: 1px 2px#d37838;
+    text-align: center;
+}
+
+.container {
+    margin: 30px 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form{
+    width: 280px;
+    margin : 5px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    background-color: #4d3e37;
+    border: 7px solid #d37838;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px #e4945a;
+}
+
+input {
+    background-color: #d2c0ac;
+}
+
+.form-input {
+    display:flex;
+    width: 250px;
+    flex-direction: column;
+    margin: 5px 15px;
+    color: #efc44de8;
+}
+
+#atenuacao-disp,
+#floculacao-disp,
+.radio {
+    width: 13px;
+}
+
+label {
+    display: inline-block;
+    margin: 5px;
+    font-weight: 600;
+}
+
+input {
+    width: 250px;
+    justify-content: space-around;
+}
+
+.form-submit {
+    font-style: italic;
+    font-weight: 600;
+    padding: 5px;
+    color: #eece78;
+    width: 170px;
+    margin: 10px 60px;
+    border: 2px solid #e4945a;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
+    box-shadow: 2px 2px 3px rgb(173, 113, 72);
+}
+
+.form-submit:hover {
+    background-image: linear-gradient(45deg,#c58f6f #7c3c2a, #c57f6f);
+    box-shadow: 3px 3px 6px rgb(173, 113, 72);
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.form-submit:active {
+    box-shadow: 1px 1px 3px rgb(173, 113, 72);
+    transition: 0.3s;
+}
+
+.table {
+    margin-top: 25px;
+    width: 70%;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    color: #eece78;
+    background-color: #4d3e37;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+    padding: 5px;
+    border: 2px solid #d37e40;
+}
+
+.aviso-alto {
+    background-color: orangered;
+    color: white;
+}
+
+.aviso-médio {
+    background-color: orange;
+    color: white;
+}
+
+.aviso-expirado {
+    background-color: red;
+    color: white;
+}
+
+.aviso-expirado span {
+    display: none
+}
+
+.aviso-expirado:after {
+    content: "Expirado";
+}
+
+.td-acao {
+    background-color: #e5cfa8;
+    border: 1px;
+    width: 30px
+}
+
+.thead {
+    font-weight: bold;
+    vertical-align: middle;
+    border-top: 6px solid #d37e40;
+}
+
+.tbody-l {
+    border-left: 7px solid #d37e40;
+}
+
+.tbody-r {
+    border-right: 7px solid #d37e40;
+}
+
+.tfoot {
+    border-bottom: 7px solid #d37e40;   
+}
+
+.listagem:hover {
+    color: #eece78;
+    background-color: #695850;
+}
+
+.btn-repicar {
+    color: #eece78;
+    padding: 2px 10px;
+    border: 2px solid #e4945a;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #7c3c2a, #c78661, #5a3126);
+    box-shadow: 1px 1px 3px black;
+}
+
+.btn-repicar:hover {
+    box-shadow: 2px 2px 5px black;
+}
+
+.btn-repicar:active {
+    box-shadow: 1px 1px 3px black;
+}
+
+.none {
+    display: none;
+}

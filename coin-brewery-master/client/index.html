@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="img/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x161.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flexbox.css">
+    <title>Cadastro Leveduras</title>
+</head>
+<header class="container-header">
+    <div class="caixa">
+        <nav>
+            <ul>
+                <li><a href="index.html">Catálogo</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <div>
+        <h1><a href="index.html"><img class="logo-nav" src="img\beernobackground.png"></a></h1>
+    </div>
+    <div class="caixa">
+        <nav>
+            <ul>
+                <li><a href="cheatsheet.html">Calculadoras</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+
+    <h2 class="estoque">Leveduras em Estoque</h2>
+
+    <section class="container">
+        <div>
+            <form class="form " onsubmit="controller.adiciona(event)">
+
+                <div class="form-input">
+                    <label for="entrada">Data Entrada:</label>
+                    <input id="entrada" name="entrada" type="date">
+                </div>
+
+                <div class="form-input">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" required>
+                </div>
+
+                <div class="form-input">
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" id="marca" required>
+                </div>
+
+                <div class="form-input">
+                    <div class="form-checkbox">
+                        <label for="atenuacao">Atenuação:</label>
+                        <div>
+                            <input type="checkbox" name="atenuacao-disp" id="atenuacao-disp">
+                            <label for="atenuacao-disp">N/D</label>
+                        </div>
+                    </div>
+                    <input id="atenuacao" name="atenuacao" type="number" min="0.00" max="100" step="0.05" value="0.0">
+                </div>
+
+                <div class="form-input">
+                    <label>Floculação:</label>
+                    <div class="form-radio">
+                        <label for="alta">Alta</label>
+                        <input type="radio" name="floculacao" id="alta" class="radio" value="Alta" checked>
+                    </div>
+                    <div class="form-radio">
+                        <label for="media">Média</label>
+                        <input type="radio" name="floculacao" id="media" class="radio" value="Média">
+                    </div>
+                    <div class="form-radio">
+                        <label for="baixa">Baixa</label>
+                        <input type="radio" name="floculacao" id="baixa" class="radio" value="Baixa">
+                    </div>
+                    <div class="form-radio">
+                        <label for="floculação-disp">N/D</label>
+                        <input type="radio" name="floculacao" id="floculacao-disp" class="radio" value="N/D">
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <label>Perfil Fermentativo:</label>
+                    <div class="form-radio">
+                        <label for="ale">Ale</label>
+                        <input type="radio" name="perfil-fermentativo" id="ale" class="radio" value="Ale" checked>
+                    </div>
+                    <div class="form-radio">
+                        <label for="lager">Lager</label>
+                        <input type="radio" name="perfil-fermentativo" id="lager" class="radio" value="Lager">
+                    </div>
+                    <div class="form-radio">
+                        <label for="selvagem">Selvagem</label>
+                        <input type="radio" name="perfil-fermentativo" id="selvagem" class="radio" value="selvagem">
+                    </div>
+                    <div class="form-radio">
+                        <label for="bacteria">Bactéria</label>
+                        <input type="radio" name="perfil-fermentativo" id="bacteria" class="radio" value="Bactéria">
+                    </div>
+                    <div class="form-radio">
+                        <label for="perfil-disp">N/D</label>
+                        <input type="radio" name="perfil-fermentativo" id="perfil-disp" class="radio" value="N/D">
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <label for="repiques">Quantidade de Repiques:</label>
+                    <input id="repiques" name="repiques" type="number" min="0" step="1" value="0" required>
+                </div>
+
+                <button class="form-submit" type="submit">Adicionar Levedura</button>
+            </form>
+        </div>
+
+        <div class="table" id="levedurasView">
+
+        </div>
+    </section>
+
+
+
+    <script src="js/app/services/ConnectionFactory.js"></script>
+    <script src="js/app/services/IdService.js"></script>
+    <script src="js/app/services/LeveduraService.js"></script>
+    <script src="js/app/model/LeveduraModel.js"></script>
+    <script src="js/app/model/ListaLeveduras.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/dao/LevedurasDao.js"></script>
+    <script src="js/app/view/View.js"></script>
+    <script src="js/app/view/LevedurasView.js"></script>
+    <script src="js/app/controller/controllerEventListener.js"></script>
+    <script src="js/app/controller/Controller.js"></script>
+
+    <script>
+        const controller = new Controller();
+    </script>
+</body>
+
+<footer>
+    <img src="img\beernobackground.png" class="logo">
+</footer>
+
+
+</html>
