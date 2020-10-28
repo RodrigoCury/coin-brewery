@@ -30,7 +30,12 @@ footer {
 }
 /*parte mobile*/
 @media(max-width: 768px) {
-
+header {
+    position: relative;
+}
+body {
+    margin-top: auto;
+}
 .form {
     display: flex;
 
@@ -51,10 +56,9 @@ footer {
     justify-content: space-between;
     height: 200px;
     align-items: center;
+    width: 100%;
 }
-body {
-    margin-top: 230px;
-}
+
 footer {
     align-items: center;
 }
